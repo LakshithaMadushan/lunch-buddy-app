@@ -1,0 +1,35 @@
+<div
+  class="mb-10 overflow-hidden duration-300 bg-white rounded-lg shadow-1 dark:bg-dark-2 dark:shadow-card hover:shadow-3">
+  <div class="px-6 py-8 sm:p-8 md:py-7 md:px-5 lg:py-8 lg:px-5 xl:py-8 xl:px-5 2xl:p-8">
+    <div class="flex flex-wrap items-center justify-between mb-6 text-base leading-relaxed border-b  pb-7">
+      <div class="flex items-center w-max">
+        <div
+          class="mr-4 h-[40px] w-full max-w-[40px] overflow-hidden rounded-full md:mr-2 md:h-[35px] md:max-w-[35px] lg:mr-4 lg:h-[40px] lg:max-w-[40px]">
+          <img [src]="member?.user?.avatarUrl"
+               alt="image" class="w-full">
+        </div>
+        <div class="w-full">
+          <h5 class="text-sm font-medium text-dark dark:text-white sm:text-[15px] md:text-sm lg:text-[15px]">
+            {{member?.user?.firstName + " " + member?.user?.lastName}}
+          </h5>
+<!--          <p class="text-xs text-body-color dark:text-dark-6">-->
+<!--            {{designation}}-->
+<!--          </p>-->
+        </div>
+      </div>
+      <div class="w-full max-w-[100px] text-right">
+                   <span
+                     [ngClass]="member?.user?.userId === member?.session?.startedBy ? 'bg-primary': 'bg-green'"
+                     class="inline-block rounded-full border border-transparent px-2.5 py-0.5 text-[10px] font-medium text-white">
+                   {{member?.user?.userId === member?.session?.startedBy ? 'Owner' : 'Participant'}}
+                 </span>
+      </div>
+    </div>
+    <h3>
+      <a
+        class="text-dark dark:text-white hover:text-primary block text-xl font-semibold sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]">
+        {{member?.location ? member?.location : '-'}}
+      </a>
+    </h3>
+  </div>
+</div>

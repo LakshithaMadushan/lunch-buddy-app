@@ -1,0 +1,13 @@
+.sign-in-section {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-image: url("/assets/images/sign-in-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  .container {
+    opacity: 0.9;
+  }
+}

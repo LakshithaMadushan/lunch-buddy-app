@@ -1,0 +1,22 @@
+<div *ngIf="(notification$ | async) as notification" class="alert-container">
+  <div *ngIf="notification.type === notificationStatuses.INFO"
+       class="alert info p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+       role="alert">
+    <span class="font-medium">{{notification.message}}</span>
+  </div>
+  <div *ngIf="notification.type === notificationStatuses.DANGER"
+       class="alert danger p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+       role="alert">
+    <span class="font-medium">{{notification.message}}</span>
+  </div>
+  <div *ngIf="notification.type === notificationStatuses.SUCCESS"
+       class="alert success p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+       role="alert">
+    <span class="font-medium">{{notification.message}}</span>
+  </div>
+  <div *ngIf="notification.type === notificationStatuses.WARNING"
+       class="alert warning p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+       role="alert">
+    <span class="font-medium">{{notification.message}}</span>
+  </div>
+</div>

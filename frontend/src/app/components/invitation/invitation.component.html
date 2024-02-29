@@ -1,0 +1,53 @@
+<div
+  (click)="goToTheSession()"
+  class="relative navigation flex items-center justify-between p-[18px] bg-green-light-6 hover:bg-gray-4 dark:hover:bg-dark-3 mb-2"
+>
+  <div class="flex items-center">
+                  <span *ngIf="isJoined()"
+                        class="absolute left-2 -top-5 bg-green-dark border-green-dark m-2 inline-block rounded-full px-2.5 py-1 text-xs font-medium text-white">{{isEnded() ? 'Joined' : 'Currently Joined'}}</span>
+
+    <div
+      class="mr-4 h-[50px] w-full max-w-[50px] overflow-hidden rounded-full"
+    >
+      <img
+        src="{{startedUser?.avatarUrl}}"
+        alt="user"
+        class="rounded-full object-cover object-center"
+      />
+    </div>
+    <div>
+      <h4
+        class="text-base font-medium text-dark dark:text-white">{{startedUser?.firstName + " " + startedUser?.lastName}}</h4>
+      <p [style.color]="isEnded() ? 'red': '#637381'"
+         class="text-body-color text-sm dark:text-dark-6">{{getSessionStatus()}}</p>
+    </div>
+  </div>
+  <div class="flex items-center">
+    <ng-container *ngIf="!isJoined() && !isEnded()">
+      <button (click)="acceptInvitation($event)"
+              class="bg-green border-dark rounded-md inline-flex items-center justify-center py-2 px-4 text-center text-base font-medium text-white hover:bg-green-dark mr-2 "
+      >
+        Accept
+      </button>
+      <button (click)="rejectInvitation($event)"
+              class="bg-red border-dark rounded-md inline-flex items-center justify-center py-2 px-4 text-center text-base font-medium text-white hover:bg-red-dark"
+      >
+        Reject
+      </button>
+    </ng-container>
+    <ng-container *ngIf="isJoined() && !isEnded() && !isOwner()">
+      <button (click)="leaveFromSession($event)"
+              class="bg-red border-dark rounded-md inline-flex items-center justify-center py-2 px-4 text-center text-base font-medium text-white hover:bg-red-dark"
+      >
+        Leave
+      </button>
+    </ng-container>
+    <ng-container *ngIf="isJoined() && !isEnded() && isOwner()">
+      <button (click)="endSession($event)"
+              class="bg-red border-dark rounded-md inline-flex items-center justify-center py-2 px-4 text-center text-base font-medium text-white hover:bg-red-dark"
+      >
+        End Session
+      </button>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+.section-container {
+  height: 100%;
+}
+
+.bottom-section {
+  height: 20%;
+  position: sticky;
+  bottom: 0;
+}
+
+.end-session, .add-members {
+  text-wrap: nowrap;
+}
+
+.hide {
+  display: none;
+}

@@ -1,0 +1,30 @@
+<div class="justify-end hidden sm:flex lg:pr-0">
+  <div class="group relative">
+    <a class="flex items-center">
+      <p class="mr-4 text-right text-sm font-medium text-dark dark:text-white">
+        <span>{{fullName}}</span>
+      </p>
+      <img [src]="avatarUrl" alt="avatar"
+           class="h-12 w-[48px] rounded-full object-cover object-center">
+      <span class="down-arrow text-body-color dark:text-dark-6 ml-3">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                           class="fill-current">
+                         <path
+                           d="M10 14.25C9.8125 14.25 9.65625 14.1875 9.5 14.0625L2.3125 7C2.03125 6.71875 2.03125 6.28125 2.3125 6C2.59375 5.71875 3.03125 5.71875 3.3125 6L10 12.5312L16.6875 5.9375C16.9688 5.65625 17.4063 5.65625 17.6875 5.9375C17.9687 6.21875 17.9687 6.65625 17.6875 6.9375L10.5 14C10.3437 14.1563 10.1875 14.25 10 14.25Z"></path>
+                      </svg>
+                   </span>
+    </a>
+    <div
+      class="invisible absolute right-0 top-[120%] mt-3 w-[200px] space-y-2 rounded bg-white dark:bg-dark-2 p-3 opacity-0 shadow-card-2 duration-200 group-hover:visible group-hover:top-full group-hover:opacity-100">
+      <a routerLink="/home"
+         class="go-home-btn block rounded px-4 py-2 text-sm font-medium text-body-color dark:text-dark-6 hover:bg-gray-2 dark:hover:bg-dark hover:text-primary">
+        Lunch Buddy Home
+      </a>
+      <a (click)="signOut()"
+        class="sign-out-btn block rounded px-4 py-2 text-sm font-medium text-body-color dark:text-dark-6 hover:bg-gray-2 dark:hover:bg-dark hover:text-primary">
+        Sign Out
+      </a>
+    </div>
+  </div>
+</div>
+
