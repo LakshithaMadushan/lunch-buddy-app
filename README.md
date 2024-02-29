@@ -39,3 +39,25 @@ mvn clean install
 ```
 mvn spring-boot:run
 ```
+
+## ⚠️ User IDs and passwords for Sign-in
+
+**user_1:** pwd123
+
+**user_2:** pwd123
+
+**user_3:** pwd123
+
+**user_4:** pwd123
+
+**user_5:** pwd123
+
+**user_6:** pwd123
+
+**user_7:** pwd123
+
+**user_8:** pwd123
+
+**user_9:** pwd123
+
+**user_10:** pwd123
